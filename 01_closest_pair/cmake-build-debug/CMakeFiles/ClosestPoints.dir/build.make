@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/xukexin/ClionProjects/ClosestPoints
+CMAKE_SOURCE_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ClosestPoints.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ClosestPoints.dir/flags.make
 
 CMakeFiles/ClosestPoints.dir/main.cpp.o: CMakeFiles/ClosestPoints.dir/flags.make
 CMakeFiles/ClosestPoints.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ClosestPoints.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClosestPoints.dir/main.cpp.o -c /Users/xukexin/ClionProjects/ClosestPoints/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ClosestPoints.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClosestPoints.dir/main.cpp.o -c /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp
 
 CMakeFiles/ClosestPoints.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ClosestPoints.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xukexin/ClionProjects/ClosestPoints/main.cpp > CMakeFiles/ClosestPoints.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp > CMakeFiles/ClosestPoints.dir/main.cpp.i
 
 CMakeFiles/ClosestPoints.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ClosestPoints.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xukexin/ClionProjects/ClosestPoints/main.cpp -o CMakeFiles/ClosestPoints.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp -o CMakeFiles/ClosestPoints.dir/main.cpp.s
 
 CMakeFiles/ClosestPoints.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ClosestPoints.dir/main.cpp.o.provides.build: CMakeFiles/ClosestPoints
 
 CMakeFiles/ClosestPoints.dir/point.cpp.o: CMakeFiles/ClosestPoints.dir/flags.make
 CMakeFiles/ClosestPoints.dir/point.cpp.o: ../point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ClosestPoints.dir/point.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClosestPoints.dir/point.cpp.o -c /Users/xukexin/ClionProjects/ClosestPoints/point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ClosestPoints.dir/point.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ClosestPoints.dir/point.cpp.o -c /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp
 
 CMakeFiles/ClosestPoints.dir/point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ClosestPoints.dir/point.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xukexin/ClionProjects/ClosestPoints/point.cpp > CMakeFiles/ClosestPoints.dir/point.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp > CMakeFiles/ClosestPoints.dir/point.cpp.i
 
 CMakeFiles/ClosestPoints.dir/point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ClosestPoints.dir/point.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xukexin/ClionProjects/ClosestPoints/point.cpp -o CMakeFiles/ClosestPoints.dir/point.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp -o CMakeFiles/ClosestPoints.dir/point.cpp.s
 
 CMakeFiles/ClosestPoints.dir/point.cpp.o.requires:
 
@@ -117,7 +117,7 @@ ClosestPoints: CMakeFiles/ClosestPoints.dir/main.cpp.o
 ClosestPoints: CMakeFiles/ClosestPoints.dir/point.cpp.o
 ClosestPoints: CMakeFiles/ClosestPoints.dir/build.make
 ClosestPoints: CMakeFiles/ClosestPoints.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ClosestPoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ClosestPoints"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ClosestPoints.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/ClosestPoints.dir/clean:
 .PHONY : CMakeFiles/ClosestPoints.dir/clean
 
 CMakeFiles/ClosestPoints.dir/depend:
-	cd /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/xukexin/ClionProjects/ClosestPoints /Users/xukexin/ClionProjects/ClosestPoints /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/ClosestPoints.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/ClosestPoints.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ClosestPoints.dir/depend
 

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/xukexin/ClionProjects/ClosestPoints/main.cpp" "/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/ClosestPoints.dir/main.cpp.o"
-  "/Users/xukexin/ClionProjects/ClosestPoints/point.cpp" "/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/ClosestPoints.dir/point.cpp.o"
+  "/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp" "/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/ClosestPoints.dir/main.cpp.o"
+  "/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp" "/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/ClosestPoints.dir/point.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -1,3 +1,3 @@
-/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/ClosestPoints.dir
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/closest_pair.dir

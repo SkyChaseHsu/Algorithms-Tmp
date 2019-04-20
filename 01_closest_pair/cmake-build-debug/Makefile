@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/xukexin/ClionProjects/ClosestPoints
+CMAKE_SOURCE_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ClosestPoints
+# Target rules for targets named closest_pair
 
 # Build rule for target.
-ClosestPoints: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ClosestPoints
-.PHONY : ClosestPoints
+closest_pair: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 closest_pair
+.PHONY : closest_pair
 
 # fast build rule for target.
-ClosestPoints/fast:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/build
-.PHONY : ClosestPoints/fast
+closest_pair/fast:
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/build
+.PHONY : closest_pair/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +147,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 point.o: point.cpp.o
@@ -156,7 +156,7 @@ point.o: point.cpp.o
 
 # target to build an object file
 point.cpp.o:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/point.cpp.o
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/point.cpp.o
 .PHONY : point.cpp.o
 
 point.i: point.cpp.i
@@ -165,7 +165,7 @@ point.i: point.cpp.i
 
 # target to preprocess a source file
 point.cpp.i:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/point.cpp.i
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/point.cpp.i
 .PHONY : point.cpp.i
 
 point.s: point.cpp.s
@@ -174,7 +174,7 @@ point.s: point.cpp.s
 
 # target to generate assembly for a file
 point.cpp.s:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/point.cpp.s
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/point.cpp.s
 .PHONY : point.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ClosestPoints"
+	@echo "... closest_pair"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

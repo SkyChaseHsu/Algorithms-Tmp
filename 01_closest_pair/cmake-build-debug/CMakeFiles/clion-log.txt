@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/xukexin/ClionProjects/ClosestPoints
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug
+-- Build files have been written to: /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug

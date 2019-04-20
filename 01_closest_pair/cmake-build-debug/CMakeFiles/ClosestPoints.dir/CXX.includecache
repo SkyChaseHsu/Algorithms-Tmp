@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/xukexin/ClionProjects/ClosestPoints/main.cpp
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp
 iostream
 -
 time.h
@@ -18,11 +18,11 @@ sstream
 fstream
 -
 point.h
-/Users/xukexin/ClionProjects/ClosestPoints/point.h
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
 
-/Users/xukexin/ClionProjects/ClosestPoints/point.cpp
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp
 point.h
-/Users/xukexin/ClionProjects/ClosestPoints/point.h
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
 iostream
 -
 cmath
@@ -30,5 +30,5 @@ cmath
 cfloat
 -
 
-/Users/xukexin/ClionProjects/ClosestPoints/point.h
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
 

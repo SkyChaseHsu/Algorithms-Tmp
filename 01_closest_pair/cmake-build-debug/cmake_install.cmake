@@ -1,4 +1,4 @@
-# Install script for directory: /Users/xukexin/ClionProjects/ClosestPoints
+# Install script for directory: /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

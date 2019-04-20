@@ -54,45 +54,45 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/xukexin/ClionProjects/ClosestPoints
+CMAKE_SOURCE_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/ClosestPoints.dir
+# Target rules for target CMakeFiles/closest_pair.dir
 
 # All Build rule for target.
-CMakeFiles/ClosestPoints.dir/all:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/depend
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target ClosestPoints"
-.PHONY : CMakeFiles/ClosestPoints.dir/all
+CMakeFiles/closest_pair.dir/all:
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/depend
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target closest_pair"
+.PHONY : CMakeFiles/closest_pair.dir/all
 
 # Include target in all.
-all: CMakeFiles/ClosestPoints.dir/all
+all: CMakeFiles/closest_pair.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ClosestPoints.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ClosestPoints.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/ClionProjects/ClosestPoints/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ClosestPoints.dir/rule
+CMakeFiles/closest_pair.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/closest_pair.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/closest_pair.dir/rule
 
 # Convenience name for target.
-ClosestPoints: CMakeFiles/ClosestPoints.dir/rule
+closest_pair: CMakeFiles/closest_pair.dir/rule
 
-.PHONY : ClosestPoints
-
-# clean rule for target.
-CMakeFiles/ClosestPoints.dir/clean:
-	$(MAKE) -f CMakeFiles/ClosestPoints.dir/build.make CMakeFiles/ClosestPoints.dir/clean
-.PHONY : CMakeFiles/ClosestPoints.dir/clean
+.PHONY : closest_pair
 
 # clean rule for target.
-clean: CMakeFiles/ClosestPoints.dir/clean
+CMakeFiles/closest_pair.dir/clean:
+	$(MAKE) -f CMakeFiles/closest_pair.dir/build.make CMakeFiles/closest_pair.dir/clean
+.PHONY : CMakeFiles/closest_pair.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/closest_pair.dir/clean
 
 .PHONY : clean
 
