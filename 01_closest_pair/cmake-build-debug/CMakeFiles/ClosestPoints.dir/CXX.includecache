@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/xukexin/ClionProjects/ClosestPoints/main.cpp
+iostream
+-
+time.h
+-
+cmath
+-
+sstream
+-
+fstream
+-
+point.h
+/Users/xukexin/ClionProjects/ClosestPoints/point.h
+
+/Users/xukexin/ClionProjects/ClosestPoints/point.cpp
+point.h
+/Users/xukexin/ClionProjects/ClosestPoints/point.h
+iostream
+-
+cmath
+-
+cfloat
+-
+
+/Users/xukexin/ClionProjects/ClosestPoints/point.h
+
