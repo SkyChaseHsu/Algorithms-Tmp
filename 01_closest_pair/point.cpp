@@ -183,7 +183,7 @@ double PGroup::dacMin(PGroup py) {
         else
             pyRight.setPoint(right_cnt++, points[i].getX(), points[i].getY());
     }
-    
+
     pyLeft.setN(left_cnt);
     pyRight.setN(right_cnt);
 
