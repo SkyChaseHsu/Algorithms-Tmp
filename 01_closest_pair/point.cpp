@@ -11,7 +11,6 @@ using namespace std;
 
 #define random(a,b) (rand()%(b-a+1)+a)
 
-
 /* Point 对象 */
 // 缺省构造函数
 Point::Point() {
@@ -41,24 +40,18 @@ void Point::setXY(int x_v, int y_v) {
     y = y_v;
 }
 
-// 设置点集的规模
-void PGroup::setN(int n_v) {
-    n = n_v;
-}
-
-// 得到点集的规模
-int PGroup::getN() {
-    return n;
-}
-
-// 设置点集中某个点的值
-void PGroup::setPoint(int i, int x_v, int y_v) {
-    points[i].setXY(x_v, y_v);
-}
-
 // 求点到另外一个点 p 的距离
 double Point::getDisTo(Point &p) {
     return sqrt(pow(x - p.getX(), 2) + pow(y - p.getY(), 2));
+}
+
+// Point：判断点是否在点集 pg 里面
+int Point::inside (PGroup pg) {
+    for (int i = 0; i < pg.getN(); i++) {
+        if (x == pg.getPoints(i).getX() && y == pg.getPoints(i).getY())
+            return 1;
+    }
+    return 0;
 }
 
 /* PGroup 对象 */
@@ -83,6 +76,21 @@ PGroup::PGroup(PGroup &pg) {
 // 析构函数
 PGroup::~PGroup() {
     delete []points;
+}
+
+// 设置点集的规模
+void PGroup::setN(int n_v) {
+    n = n_v;
+}
+
+// 得到点集的规模
+int PGroup::getN() {
+    return n;
+}
+
+// 设置点集中某个点的值
+void PGroup::setPoint(int i, int x_v, int y_v) {
+    points[i].setXY(x_v, y_v);
 }
 
 // 根据点的 x 值对点集进行排序
@@ -147,7 +155,7 @@ double PGroup::vioMin() {
 }
 
 // 分治法求解
-double PGroup::dacMin() {
+double PGroup::dacMin(PGroup py) {
 
     // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
     if (n < 2){
@@ -157,38 +165,47 @@ double PGroup::dacMin() {
     }
 
     // 将点集按照 x 值进行排序， 取中位数作为分隔线
-    sortX();
     int mid_x = points[n/2].getX();
 
     // 将点集分为左右两个子集
-    PGroup left(n/2);
-    PGroup right(n - n/2);
+    PGroup pgLeft(n/2);
+    PGroup pgRight(n - n/2);
 
     for (int i = 0; i < n/2; i++) {
-        left.setPoint(i, points[i].getX(),points[i].getY());
+        pgLeft.setPoint(i, points[i].getX(), points[i].getY());
     }
 
-    for(int i = n/2, j = 0; i < n; i++, j++) {
-        right.setPoint(j, points[i].getX(),points[i].getY());
+    for (int i = n/2, j = 0; i < n; i++, j++) {
+        pgRight.setPoint(j, points[i].getX(),points[i].getY());
     }
+
+    // 将点集 py 分为左右个子集
+    PGroup pyLeft(n);
+    PGroup pyRight(n);
+    int left_cnt = 0, right_cnt = 0;
+    for (int i = 0; i < n; i++) {
+        if (points[i].inside(pgLeft))
+            pyLeft.setPoint(left_cnt++, points[i].getX(), points[i].getY());
+        if (points[i].inside(pgRight))
+            pyRight.setPoint(right_cnt++, points[i].getX(), points[i].getY());
+    }
+    pyLeft.setN(left_cnt);
+    pyRight.setN(right_cnt);
 
     // 分别递归求出左右两个点集的函数，求出最小值为点集的最小点距
-    double left_min = left.dacMin();
-    double right_min = right.dacMin();
-    double tol_min = left_min < right_min? left_min : right_min;
+    double min_left = pgLeft.dacMin(pyLeft);
+    double min_right =pgRight.dacMin(pyRight);
+    double min_tol = min_left < min_right? min_left : min_right;
 
     // 求出出 mid - min 到 mid + min 之前的点
     PGroup mid(n);
     int mid_cnt = 0;
     for(int i = 0; i < n; i++) {
-        if (abs(points[i].getX() - mid_x) <= tol_min) {
-            mid.setPoint(mid_cnt++, points[i].getX(), points[i].getY());
+        if (abs(py.getPoints(i).getX() - mid_x) <= min_tol) {
+            mid.setPoint(mid_cnt++, py.getPoints(i).getX(), py.getPoints(i).getY());
         }
     }
     mid.setN(mid_cnt);
-
-    // 对 mid 点集中的点按照值进行排序
-    mid.sortY();
 
     // 对 mid 点集中线左边的每个点
     // 依次求解右边的往下的 6 个点的点距
@@ -196,12 +213,12 @@ double PGroup::dacMin() {
         for (int j = i + 1; j <= i + 7 && j < mid.getN(); j++) {
             Point tmp = mid.getPoints(j);
             double cur_dis = mid.getPoints(i).getDisTo(tmp);
-            if (cur_dis < tol_min) {
-                tol_min = cur_dis;
+            if (cur_dis < min_tol) {
+                min_tol = cur_dis;
             }
         }
     }
 
-    return tol_min;
+    return min_tol;
 }
 

@@ -82,5 +82,12 @@ int main() {
     outcsv_vio.close();
     */
 
+    PGroup pg(100);
+    PGroup py(pg);
+    py.sortY();
+
+    cout<<pg.vioMin()<<endl;
+    cout<<pg.dacMin(py)<<endl;
+
     return 0;
 }

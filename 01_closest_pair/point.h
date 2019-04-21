@@ -5,6 +5,8 @@
 #ifndef CLOSESTPOINTS_POINT_H
 #define CLOSESTPOINTS_POINT_H
 
+class Point;
+class PGroup;
 
 class Point {
     int x, y;
@@ -15,6 +17,7 @@ public:
     int getY();
     void setXY(int x_v, int y_v);
     double getDisTo(Point &p);
+    int inside (PGroup pg);
 };
 
 class PGroup {
@@ -28,7 +31,7 @@ public:
     void sortX();
     void sortY();
     double vioMin();
-    double dacMin();
+    double dacMin(PGroup py);
     void setN(int n_v);
     void setPoint(int i, int x_v, int y_v);
     void display();
