@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+01_closest_pair_BINARY_DIR:STATIC=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/cmake-build-debug
+
+//Value Computed by CMake
+01_closest_pair_SOURCE_DIR:STATIC=/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
 
@@ -135,7 +141,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=closest_pair
+CMAKE_PROJECT_NAME:STATIC=01_closest_pair
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
