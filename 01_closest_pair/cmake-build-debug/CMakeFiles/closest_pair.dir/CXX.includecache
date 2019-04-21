@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/main.cpp
+iostream
+-
+time.h
+-
+cmath
+-
+sstream
+-
+fstream
+-
+point.h
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
+
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.cpp
+point.h
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
+iostream
+-
+cmath
+-
+cfloat
+-
+
+/Users/xukexin/GIT_RES/Algorithms-Tmp/01_closest_pair/point.h
+
