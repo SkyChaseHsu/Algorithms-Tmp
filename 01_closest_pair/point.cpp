@@ -11,33 +11,56 @@ using namespace std;
 
 #define random(a,b) (rand()%(b-a+1)+a)
 
+// 缺省构造函数
 Point::Point() {
     x = 0;
     y = 0;
 }
 
+// 构造函数
 Point::Point(int x_v, int y_v) {
     x = x_v;
     y = y_v;
 }
 
+// 返回点的x值
 int Point::getX() {
     return x;
 }
 
+// 返回点的y值
 int Point::getY() {
     return y;
 }
 
+// 设置点的x, y值
 void Point::setXY(int x_v, int y_v) {
     x = x_v;
     y = y_v;
 }
 
+// 设置点集的规模
+void PGroup::setN(int n_v) {
+    n = n_v;
+}
+
+// 得到点集的规模
+int PGroup::getN() {
+    return n;
+}
+
+// 设置点集中某个点的值
+void PGroup::setPoint(int i, int x_v, int y_v) {
+    points[i].setXY(x_v, y_v);
+}
+
+// 求点到另外一个点 p 的距离
 double Point::getDisTo(Point &p) {
     return sqrt(pow(x - p.getX(), 2) + pow(y - p.getY(), 2));
 }
 
+
+// 初始化点集（规模为n_v)
 PGroup::PGroup(int n_v) {
     n = n_v;
     points = new Point[n_v];
@@ -46,25 +69,62 @@ PGroup::PGroup(int n_v) {
         points[i].setXY(random(1, 100000), random(1, 100000));
     }
 }
+
+// 析构函数
 PGroup::~PGroup() {
     delete []points;
 }
 
+// 根据点的 x 值对点集进行排序
 void PGroup::sortX() {
     sort(points, points + n, cmpX);
 }
 
+// 根据点的 y 值对点集进行排序
 void PGroup::sortY() {
     sort(points, points + n, cmpY);
 }
 
+// 按 x 值升值排序的比较函数
+bool cmpX(Point a, Point b) {
+    return a.getX() < b.getX();
+}
+
+// 按 y 值升值排序的比较函数
+bool cmpY(Point a, Point b) {
+    return a.getY() < b.getY();
+}
+
+
+
+// 打印点集所有点
+void PGroup::display() {
+    for (int i = 0; i < n; i++) {
+        cout<<"("<<points[i].getX()<<", "<<points[i].getY()<<")";
+        if (i != n-1) cout<<" ";
+    }
+    cout<<endl;
+}
+
+// 返回点集中的某个点
+Point PGroup::getPoints(int i) {
+    return points[i];
+}
+
+
+
+// 暴力求解
 double PGroup::vioMin() {
+
+    // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
     if (n < 2){
         return DBL_MAX;
     } else if (n == 2) {
         return points[0].getDisTo(points[1]);
     }
 
+    // 设置最小点距 minDis 为DBL_MAX （浮点数最大值）
+    // 当前计算点距 curDis 初始化为0
     double minDis = DBL_MAX;
     double curDis = 0;
 
@@ -80,19 +140,23 @@ double PGroup::vioMin() {
     return minDis;
 }
 
+// 分治法求解
 double PGroup::dacMin() {
+
+    // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
     if (n < 2){
         return DBL_MAX;
     } else if (n == 2) {
         return points[0].getDisTo(points[1]);
     }
 
+    // 将点集按照 x 值进行排序， 取中位数作为分隔线
     sortX();
     int mid_x = points[n/2].getX();
 
+    // 将点集分为左右两个子集
     PGroup left(n/2);
     PGroup right(n - n/2);
-
 
     for (int i = 0; i < n/2; i++) {
         left.setPoint(i, points[i].getX(),points[i].getY());
@@ -102,12 +166,13 @@ double PGroup::dacMin() {
         right.setPoint(j, points[i].getX(),points[i].getY());
     }
 
+    // 分别递归求出左右两个点集的函数，求出最小值为点集的最小点距
     double left_min = left.dacMin();
     double right_min = right.dacMin();
     double tol_min = left_min < right_min? left_min : right_min;
 
+    // 求出出 mid - min 到 mid + min 之前的点
     PGroup mid(n);
-
     int mid_cnt = 0;
     for(int i = 0; i < n; i++) {
         if (abs(points[i].getX() - mid_x) <= tol_min) {
@@ -115,8 +180,12 @@ double PGroup::dacMin() {
         }
     }
     mid.setN(mid_cnt);
+
+    // 对 mid 点集中的点按照值进行排序
     mid.sortY();
 
+    // 对 mid 点集中线左边的每个点
+    // 依次求解右边的往下的 6 个点的点距
     for (int i = 0; i < mid.getN(); i++) {
         if (mid.getPoints(i).getX() - mid_x >= 0)
             continue;
@@ -138,34 +207,3 @@ double PGroup::dacMin() {
     return tol_min;
 }
 
-void PGroup::setN(int n_v) {
-    n = n_v;
-}
-
-void PGroup::setPoint(int i, int x_v, int y_v) {
-    points[i].setXY(x_v, y_v);
-}
-
-void PGroup::display() {
-    for (int i = 0; i < n; i++) {
-        cout<<"("<<points[i].getX()<<", "<<points[i].getY()<<")";
-        if (i != n-1) cout<<" ";
-    }
-    cout<<endl;
-}
-
-Point PGroup::getPoints(int i) {
-    return points[i];
-}
-
-int PGroup::getN() {
-    return n;
-}
-
-bool cmpX(Point a, Point b) {
-    return a.getX() < b.getX();
-}
-
-bool cmpY(Point a, Point b) {
-    return a.getY() < b.getY();
-}
