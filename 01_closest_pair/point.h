@@ -23,6 +23,7 @@ class PGroup {
 public:
     PGroup() {}
     PGroup(int n);
+    PGroup(PGroup &pg);
     ~PGroup();
     void sortX();
     void sortY();

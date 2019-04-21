@@ -11,6 +11,8 @@ using namespace std;
 
 #define random(a,b) (rand()%(b-a+1)+a)
 
+
+/* Point 对象 */
 // 缺省构造函数
 Point::Point() {
     x = 0;
@@ -59,14 +61,22 @@ double Point::getDisTo(Point &p) {
     return sqrt(pow(x - p.getX(), 2) + pow(y - p.getY(), 2));
 }
 
-
-// 初始化点集（规模为n_v)
+/* PGroup 对象 */
+// 构造函数：初始化点集（规模为n_v)
 PGroup::PGroup(int n_v) {
     n = n_v;
     points = new Point[n_v];
     srand((unsigned)time(NULL));
     for (int i = 0; i < n; i++) {
         points[i].setXY(random(1, 100000), random(1, 100000));
+    }
+}
+
+PGroup::PGroup(PGroup &pg) {
+    n = pg.getN();
+    points = new Point[n];
+    for (int i = 0; i < n; i++) {
+        points[i].setXY(pg.getPoints(i).getX(), pg.getPoints(i).getY());
     }
 }
 
@@ -95,8 +105,6 @@ bool cmpY(Point a, Point b) {
     return a.getY() < b.getY();
 }
 
-
-
 // 打印点集所有点
 void PGroup::display() {
     for (int i = 0; i < n; i++) {
@@ -110,8 +118,6 @@ void PGroup::display() {
 Point PGroup::getPoints(int i) {
     return points[i];
 }
-
-
 
 // 暴力求解
 double PGroup::vioMin() {

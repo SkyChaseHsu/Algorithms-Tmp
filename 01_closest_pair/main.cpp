@@ -8,6 +8,7 @@ using namespace std;
 #include "point.h"
 
 int main() {
+    /*
     // 计算程序运行的时间
     time_t begin, end;
 
@@ -79,6 +80,7 @@ int main() {
     outcsv.close();
     outcsv_div.close();
     outcsv_vio.close();
+    */
 
     return 0;
 }
