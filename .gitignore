@@ -150,5 +150,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# CMake #
+#########################################################
 
+# Clion files #
+*.includecache
+*.internal
+!Makefile
 
