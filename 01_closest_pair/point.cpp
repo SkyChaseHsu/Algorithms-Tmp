@@ -68,25 +68,14 @@ double PGroup::vioMin() {
     double minDis = DBL_MAX;
     double curDis = 0;
 
-    // test: show the closest pair
-//    int a_no, b_no;
-//    int a_x, a_y, b_x, b_y;
-//    a_x = a_y = b_x = b_y = 0;
-
     for (int i = 0; i < n; i++) {
         for(int j = i + 1; j < n; j++){
             curDis = points[i].getDisTo(points[j]);
             if (curDis < minDis) {
                 minDis = curDis;
-//                a_no = i, b_no = j;
-//                a_x = points[i].getX(), a_y = points[i].getY();
-//                b_x = points[j].getX(), b_y = points[j].getY();
             }
         }
     }
-
-//    cout<<"no: "<<a_no<<" "<<b_no<<endl;
-//    cout<<"closest pair: ("<<a_x<<","<<a_y<<") ("<<b_x<<", "<<b_y<<")"<<endl;
 
     return minDis;
 }
@@ -100,7 +89,6 @@ double PGroup::dacMin() {
 
     sortX();
     int mid_x = points[n/2].getX();
-    int mid_x_flag = n/2; // test
 
     PGroup left(n/2);
     PGroup right(n - n/2);
@@ -110,13 +98,9 @@ double PGroup::dacMin() {
         left.setPoint(i, points[i].getX(),points[i].getY());
     }
 
-//    left.display();
-
     for(int i = n/2, j = 0; i < n; i++, j++) {
         right.setPoint(j, points[i].getX(),points[i].getY());
     }
-
-//    right.display();
 
     double left_min = left.dacMin();
     double right_min = right.dacMin();
@@ -133,11 +117,6 @@ double PGroup::dacMin() {
     mid.setN(mid_cnt);
     mid.sortY();
 
-    // test: show the closest pair
-//    int a_x, a_y, b_x, b_y;
-//    a_x = a_y = b_x = b_y = 0;
-//    int change_flag = 0;
-
     for (int i = 0; i < mid.getN(); i++) {
         if (mid.getPoints(i).getX() - mid_x >= 0)
             continue;
@@ -152,16 +131,10 @@ double PGroup::dacMin() {
             double cur_dis = mid.getPoints(i).getDisTo(tmp);
             if (cur_dis < tol_min) {
                 tol_min = cur_dis;
-//                a_x = mid.getPoints(i).getX();
-//                a_y = mid.getPoints(i).getY();
-//                b_x = mid.getPoints(j).getX();
-//                b_y = mid.getPoints(j).getY();
-//                change_flag = 1;
             }
         }
     }
-//    if (change_flag)
-//        cout<<"closest pair: \t("<<a_x<<","<<a_y<<") \t("<<b_x<<", "<<b_y<<") \t"<<tol_min<<endl;
+
     return tol_min;
 }
 

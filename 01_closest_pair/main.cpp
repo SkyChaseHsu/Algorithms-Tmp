@@ -8,6 +8,7 @@ using namespace std;
 #include "point.h"
 
 int main() {
+    /*
     time_t begin, end;
 
     int N_v = 1000; // basic N value
@@ -61,6 +62,6 @@ int main() {
     outcsv.close();
     outcsv_div.close();
     outcsv_vio.close();
-
+*/
     return 0;
 }
