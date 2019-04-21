@@ -156,7 +156,6 @@ double PGroup::vioMin() {
 
 // 分治法求解
 double PGroup::dacMin(PGroup py) {
-
     // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
     if (n < 2){
         return DBL_MAX;

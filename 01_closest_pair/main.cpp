@@ -8,7 +8,6 @@ using namespace std;
 #include "point.h"
 
 int main() {
-    /*
     // 计算程序运行的时间
     time_t begin, end;
 
@@ -32,13 +31,16 @@ int main() {
 
     // 点集规模从 N_v 到 10 * N_v
     // 分治法的运行时间
-    for (int N = N_v; N <= N_v * 10; N += N_v) {
+    for (int N = N_v; N <= N_v * 3; N += N_v) {
         // 20 次的运行时间总和
         double cost_time = 0;
         for (int i = 0; i < 20; i++) {
             PGroup pg(N);
+            PGroup py(pg);
+            pg.sortX();
+            py.sortY();
             begin = clock();
-            pg.dacMin();
+            pg.dacMin(py);
             end = clock();
 
             // 运行时间：以 ms 为单位
@@ -55,7 +57,7 @@ int main() {
 
     // 点集规模从 N_v 到 10 * N_v
     // 暴力法的运行时间
-    for (int N = N_v; N <= N_v * 10; N += N_v) {
+    for (int N = N_v; N <= N_v * 3; N += N_v) {
         // 20 次的运行时间总和
         double cost_time = 0;
         for (int i = 0; i < 20; i++) {
@@ -80,15 +82,6 @@ int main() {
     outcsv.close();
     outcsv_div.close();
     outcsv_vio.close();
-    */
-
-    PGroup pg(1000);
-    PGroup py(pg);
-    pg.sortX();
-    py.sortY();
-
-    cout<<pg.vioMin()<<endl;
-    cout<<pg.dacMin(py)<<endl;
 
     return 0;
 }
