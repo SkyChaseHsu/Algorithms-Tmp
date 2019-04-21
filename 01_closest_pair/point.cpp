@@ -183,9 +183,9 @@ double PGroup::dacMin(PGroup py) {
     PGroup pyRight(n);
     int left_cnt = 0, right_cnt = 0;
     for (int i = 0; i < n; i++) {
-        if (points[i].inside(pgLeft))
+        if (points[i].getX() <= mid_x && left_cnt < n/2)
             pyLeft.setPoint(left_cnt++, points[i].getX(), points[i].getY());
-        if (points[i].inside(pgRight))
+        else
             pyRight.setPoint(right_cnt++, points[i].getX(), points[i].getY());
     }
     pyLeft.setN(left_cnt);
