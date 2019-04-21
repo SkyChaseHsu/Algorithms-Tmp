@@ -8,7 +8,6 @@ using namespace std;
 #include "point.h"
 
 int main() {
-
     // 计算程序运行的时间
     time_t begin, end;
 

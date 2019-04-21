@@ -187,15 +187,7 @@ double PGroup::dacMin() {
     // 对 mid 点集中线左边的每个点
     // 依次求解右边的往下的 6 个点的点距
     for (int i = 0; i < mid.getN(); i++) {
-        if (mid.getPoints(i).getX() - mid_x >= 0)
-            continue;
-        int cmp_cnt = 0;
-        for (int j = i + 1; j <= i + 6 + cmp_cnt && j < mid.getN(); j++) {
-            if (mid.getPoints(j).getX() - mid_x < 0) {
-                cmp_cnt++;
-                continue;
-            }
-
+        for (int j = i + 1; j <= i + 7 && j < mid.getN(); j++) {
             Point tmp = mid.getPoints(j);
             double cur_dis = mid.getPoints(i).getDisTo(tmp);
             if (cur_dis < tol_min) {
