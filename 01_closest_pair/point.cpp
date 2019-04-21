@@ -12,50 +12,41 @@ using namespace std;
 #define random(a,b) (rand()%(b-a+1)+a)
 
 /* Point 对象 */
-// 缺省构造函数
+// Point: 缺省构造函数
 Point::Point() {
     x = 0;
     y = 0;
 }
 
-// 构造函数
+// Point: 构造函数
 Point::Point(int x_v, int y_v) {
     x = x_v;
     y = y_v;
 }
 
-// 返回点的x值
+// Point: 返回点的x值
 int Point::getX() {
     return x;
 }
 
-// 返回点的y值
+// Point: 返回点的y值
 int Point::getY() {
     return y;
 }
 
-// 设置点的x, y值
+// Point: 设置点的x, y值
 void Point::setXY(int x_v, int y_v) {
     x = x_v;
     y = y_v;
 }
 
-// 求点到另外一个点 p 的距离
+// Point: 求点到另外一个点 p 的距离
 double Point::getDisTo(Point &p) {
     return sqrt(pow(x - p.getX(), 2) + pow(y - p.getY(), 2));
 }
 
-// Point：判断点是否在点集 pg 里面
-int Point::inside (PGroup pg) {
-    for (int i = 0; i < pg.getN(); i++) {
-        if (x == pg.getPoints(i).getX() && y == pg.getPoints(i).getY())
-            return 1;
-    }
-    return 0;
-}
-
 /* PGroup 对象 */
-// 构造函数：初始化点集（规模为n_v)
+// PGroup: 构造函数：初始化点集（规模为n_v)
 PGroup::PGroup(int n_v) {
     n = n_v;
     points = new Point[n_v];
@@ -65,6 +56,7 @@ PGroup::PGroup(int n_v) {
     }
 }
 
+// PGroup: 拷贝构造函数
 PGroup::PGroup(PGroup &pg) {
     n = pg.getN();
     points = new Point[n];
@@ -73,47 +65,47 @@ PGroup::PGroup(PGroup &pg) {
     }
 }
 
-// 析构函数
+// PGroup: 析构函数
 PGroup::~PGroup() {
     delete []points;
 }
 
-// 设置点集的规模
+// PGroup: 设置点集的规模
 void PGroup::setN(int n_v) {
     n = n_v;
 }
 
-// 得到点集的规模
+// PGroup: 得到点集的规模
 int PGroup::getN() {
     return n;
 }
 
-// 设置点集中某个点的值
+// PGroup: 设置点集中某个点的值
 void PGroup::setPoint(int i, int x_v, int y_v) {
     points[i].setXY(x_v, y_v);
 }
 
-// 根据点的 x 值对点集进行排序
+// PGroup: 根据点的 x 值对点集进行排序
 void PGroup::sortX() {
     sort(points, points + n, cmpX);
 }
 
-// 根据点的 y 值对点集进行排序
+// PGroup: 根据点的 y 值对点集进行排序
 void PGroup::sortY() {
     sort(points, points + n, cmpY);
 }
 
-// 按 x 值升值排序的比较函数
+// PGroup: 按 x 值升值排序的比较函数
 bool cmpX(Point a, Point b) {
     return a.getX() < b.getX();
 }
 
-// 按 y 值升值排序的比较函数
+// PGroup: 按 y 值升值排序的比较函数
 bool cmpY(Point a, Point b) {
     return a.getY() < b.getY();
 }
 
-// 打印点集所有点
+// PGroup: 打印点集所有点
 void PGroup::display() {
     for (int i = 0; i < n; i++) {
         cout<<"("<<points[i].getX()<<", "<<points[i].getY()<<")";
@@ -122,12 +114,12 @@ void PGroup::display() {
     cout<<endl;
 }
 
-// 返回点集中的某个点
+// PGroup: 返回点集中的某个点
 Point PGroup::getPoints(int i) {
     return points[i];
 }
 
-// 暴力求解
+// PGroup: 暴力求解
 double PGroup::vioMin() {
 
     // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
@@ -154,7 +146,7 @@ double PGroup::vioMin() {
     return minDis;
 }
 
-// 分治法求解
+// PGroup: 分治法求解
 double PGroup::dacMin(PGroup py) {
     // 如果点数小于2，则返回无限； 如果点数是2，就返回它们的距离
     if (n < 2){
@@ -183,11 +175,15 @@ double PGroup::dacMin(PGroup py) {
     PGroup pyRight(n);
     int left_cnt = 0, right_cnt = 0;
     for (int i = 0; i < n; i++) {
+        // 在 min_x 之前的点都在 pyLeft 里面
+        // 因为不确定 min_x 线上的点属于 pyLeft 还是 pyRight,
+        // 所以加入数量检查，超出 pyLeft 的点数的点就归pyRight了
         if (points[i].getX() <= mid_x && left_cnt < n/2)
             pyLeft.setPoint(left_cnt++, points[i].getX(), points[i].getY());
         else
             pyRight.setPoint(right_cnt++, points[i].getX(), points[i].getY());
     }
+    
     pyLeft.setN(left_cnt);
     pyRight.setN(right_cnt);
 

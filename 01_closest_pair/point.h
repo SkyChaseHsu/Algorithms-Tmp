@@ -17,7 +17,6 @@ public:
     int getY();
     void setXY(int x_v, int y_v);
     double getDisTo(Point &p);
-    int inside (PGroup pg);
 };
 
 class PGroup {
