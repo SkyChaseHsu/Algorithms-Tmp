@@ -82,8 +82,9 @@ int main() {
     outcsv_vio.close();
     */
 
-    PGroup pg(100);
+    PGroup pg(1000);
     PGroup py(pg);
+    pg.sortX();
     py.sortY();
 
     cout<<pg.vioMin()<<endl;
