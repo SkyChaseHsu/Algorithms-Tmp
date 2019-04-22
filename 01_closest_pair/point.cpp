@@ -202,20 +202,6 @@ double PGroup::dacMin(PGroup py) {
     }
     mid.setN(mid_cnt);
 
-/*
-    // 对 mid 点集中线左边的每个点
-    // 依次求解右边的往下的 7 个点的点距
-    for (int i = 0; i < mid.getN(); i++) {
-        for (int j = i + 1; j <= i + 7 && j < mid.getN(); j++) {
-            Point tmp = mid.getPoints(j);
-            double cur_dis = mid.getPoints(i).getDisTo(tmp);
-            if (cur_dis < min_tol) {
-                min_tol = cur_dis;
-            }
-        }
-    }
-*/
-
     // 对 YL 中的每个点，求 YR 中它上方的3点和下方的3点的 dis
     for (int i = 0; i < mid.getN(); i++) {
         // 只检验 YL 的点， 如果是右边的边，pass
