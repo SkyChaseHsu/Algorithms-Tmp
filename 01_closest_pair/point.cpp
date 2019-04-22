@@ -202,6 +202,7 @@ double PGroup::dacMin(PGroup py) {
     }
     mid.setN(mid_cnt);
 
+/*
     // 对 mid 点集中线左边的每个点
     // 依次求解右边的往下的 7 个点的点距
     for (int i = 0; i < mid.getN(); i++) {
@@ -213,10 +214,43 @@ double PGroup::dacMin(PGroup py) {
             }
         }
     }
+*/
 
     // 对 YL 中的每个点，求 YR 中它上方的3点和下方的3点的 dis
     for (int i = 0; i < mid.getN(); i++) {
-        if (mid.getPoints(i).getX() >)
+        // 只检验 YL 的点， 如果是右边的边，pass
+        if (mid.getPoints(i).getX() - mid_x >= 0)
+            continue;
+
+        int cmp_cnt = 0;
+        for (int j = i - 1; j >= i - 3 - cmp_cnt && j >0; j--) {
+            // 如果检验到的点是左点，cmp_cnt++，要往上多检验一个点，直到检验到 YR 的3个点
+            if (mid.getPoints(j).getX() - mid_x < 0) {
+                cmp_cnt++;
+                continue;
+            }
+
+            Point tmpPoint = mid.getPoints(j);
+            double cur_dis = mid.getPoints(i).getDisTo(tmpPoint);
+            if (cur_dis < min_tol) {
+                min_tol = cur_dis;
+            }
+        }
+
+        cmp_cnt = 0;
+        for (int j = i + 1; j <= i + 3 + cmp_cnt && j < mid.getN(); j++) {
+            // 如果检验到的点是左点，cmp_cnt++，要往下多检验一个点，直到检验到 YR 的3个点
+            if (mid.getPoints(j).getX() - mid_x < 0) {
+                cmp_cnt++;
+                continue;
+            }
+
+            Point tmpPoint = mid.getPoints(j);
+            double cur_dis = mid.getPoints(i).getDisTo(tmpPoint);
+            if (cur_dis < min_tol) {
+                min_tol = cur_dis;
+            }
+        }
     }
 
     return min_tol;
