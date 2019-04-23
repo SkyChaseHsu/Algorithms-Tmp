@@ -31,3 +31,9 @@ BEGIN
             判断是否更新距离distance 和 点a,b         
 
 END
+
+Function dacMin (PX, PY)
+BEGIN
+	
+
+END
